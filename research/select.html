@@ -1,0 +1,66 @@
+
+<div>
+  <input onclick="$(this).closest('div').find('select').slideToggle(110)">
+  <br>
+  <select size=15 onclick="$(this).hide().closest('div').find('input').val($(this).find('option:selected').text());">
+    <optgroup label="Fantasy"></optgroup>
+    <option value="gandalf">Gandalf</option>
+    <option value="harry">Harry Potter</option>
+    <option value="jon">Jon Snow</option>
+    <optgroup label="Comics"></optgroup>
+    <option value="tony">Tony Stark</option>
+    <option value="steve">Steven Rogers</option>
+    <option value="natasha">Natasha Romanova</option>
+  </select>
+</div>
+
+* {line-height:1.4;}
+div{text-align:center;}
+/* required part */
+select {position:relative;left:0px;display:none}
+
+/* beauty */
+input {
+  width: 250px;
+  display: inline-block;
+  border: none;
+  padding: 2px 0;
+  border-bottom: solid 1px #1abc9c;
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  background-position: -250px 0;
+  background-size: 250px 100%;
+  background-repeat: no-repeat;
+  color: #0e6252;
+}
+input:focus {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+select {
+    min-width:260px;
+    height:300px;
+    overflow:scroll;
+    margin-top:3px;
+    border: none;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+}
+select option {
+    text-transform:capitalize;
+    padding:12px 32px 12px 32px;
+    background-color: #fff;
+}
+select option:hover {
+    background-color: rgb(238,238,238);
+}
+select optgroup {
+    font-weight:500;
+    font-size:14;
+    text-transform:uppercase;
+    padding:16px 16px 16px 16px;
+    font-family: "Roboto" ,sans-serif;
+    font-style:normal;
+    color:rgba(117,117,117,0.87);
+    background:white;
+}
